@@ -1,11 +1,15 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ description }) => {
   return (
     <header>
-      <h1>Healthy Drinks List</h1>
+      <h1>{description} List</h1>
     </header>
   );
+};
+
+Header.defaultProps = {
+  description: "No List Provided",
 };
 
 export default Header;
