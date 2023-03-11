@@ -64,8 +64,10 @@ footer {
   place-content: center;
 }
 
-footer h5 {
+footer h5, footer p {
   font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 ul {
