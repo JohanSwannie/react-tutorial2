@@ -44,9 +44,18 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!newItem) return;
+    if (!newItem) {
+      return;
+    }
     if (!checkDuplicateItem(newItem)) {
       addItem(newItem);
+    } else {
+      document.getElementById("errorMsg").innerText =
+        "That Item Already Exists!";
+      document.getElementById("errorMsg").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("errorMsg").style.display = "none";
+      }, 3500);
     }
     setNewItem("");
   };
@@ -67,6 +76,9 @@ function App() {
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
+      <h3 id="errorMsg" aria-label="Error Message">
+        Error Message
+      </h3>
       <Footer length={items.length} />
     </div>
   );
