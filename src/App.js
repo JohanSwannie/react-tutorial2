@@ -38,7 +38,8 @@ function App() {
   };
 
   const checkDuplicateItem = (newItem) => {
-    const double = items.filter((item) => item.item === newItem).length > 0;
+    const double =
+      items.filter((instance) => instance.item === newItem).length > 0;
     return double;
   };
 
