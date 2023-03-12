@@ -16,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
-  background-image: url('https://i.pinimg.com/736x/53/9f/ea/539feaf36ae336d01ad05b29371dda94.jpg');
+  background-image: url('https://i.pinimg.com/originals/f3/c4/71/f3c4715596b0221f37247c02da267296.jpg');
 }
 
 .App {
@@ -26,7 +26,7 @@ body {
   align-items: center;
   height: 100vh; 
   width: 100%; 
-  max-width: 40rem;
+  max-width: 46rem;
   border: 18px solid rgb(0, 205, 31);
   margin: auto;
 }
