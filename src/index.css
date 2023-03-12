@@ -27,7 +27,8 @@ body {
   height: 100vh; 
   width: 100%; 
   max-width: 46rem;
-  border: 18px solid rgb(0, 205, 31);
+  border: 11px solid rgb(11, 165, 34);
+  border-style: ridge;
   margin: auto;
 }
 
