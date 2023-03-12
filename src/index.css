@@ -25,7 +25,7 @@ body {
   align-items: center;
   height: 100vh; 
   width: 100%; 
-  max-width: 45rem;
+  max-width: 60rem;
   border: 3px solid rgb(0, 205, 31);
   margin: auto;
 }
@@ -159,7 +159,7 @@ button {
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: aliceblue;
+  background-color: rgb(221, 245, 213);
   color: rgb(7, 77, 4);
   cursor: pointer;
 }
@@ -168,7 +168,6 @@ button:focus,
 button:hover {
   color: white;
   background-color: rgb(2, 23, 2);
-  outline: none;
 }
 
 .searchForm {
