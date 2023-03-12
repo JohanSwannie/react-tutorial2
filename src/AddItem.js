@@ -6,7 +6,7 @@ const AddItem = ({ newItem, setNewItem, handleSubmit }) => {
 
   return (
     <form className="addForm" onSubmit={handleSubmit}>
-      <label htmlFor="addItem">Add Item</label>
+      <label htmlFor="addItem"></label>
       <input
         autoFocus
         ref={inputRef}
