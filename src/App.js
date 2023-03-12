@@ -6,16 +6,6 @@ import Footer from "./Footer";
 import { useState } from "react";
 
 function App() {
-  // First load initial data like follows, then switch to get data from localStorage
-
-  // const [items, setItems] = useState([
-  //   {
-  //     id: 1,
-  //     checked: false,
-  //     item: "Green Tea",
-  //   },
-  // ]);
-
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem("shoppinglist"))
   );
@@ -47,16 +37,23 @@ function App() {
     setAndSaveItems(listItems);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const checkDuplicateItem = (newItem) => {
+    const double = items.filter((item) => item.item === newItem).length > 0;
+    return double;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!newItem) return;
-    addItem(newItem);
+    if (!checkDuplicateItem(newItem)) {
+      addItem(newItem);
+    }
     setNewItem("");
   };
 
   return (
     <div className="App">
-      <Header title="Healthy Drinks List" />
+      <Header title="Stella's Healthy Drinks List" />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
