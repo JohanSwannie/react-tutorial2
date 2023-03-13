@@ -5,7 +5,11 @@ const Footer = ({ length }) => {
   return (
     <footer>
       <p>
-        {length} List {length === 1 ? "Item" : "Items"}
+        {length > 1
+          ? `${length} List Items`
+          : length === 1
+          ? `${length} List Item`
+          : null}
       </p>
       <h5>Copyright &copy; {today.getFullYear()}</h5>
     </footer>
