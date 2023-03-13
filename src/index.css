@@ -69,7 +69,7 @@ footer, #errorMsg {
 #errorMsg {
   display: none;
   background-color: rgb(166, 219, 172);
-  color:rgb(162, 5, 5);
+  color: rgb(162, 5, 5);
   text-align: center;
 }
 
