@@ -64,12 +64,12 @@ function App() {
   return (
     <div className="App">
       <Headings title="Stella's Healthy Drinks List" />
+      <SearchItem search={search} setSearch={setSearch} />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
-      <SearchItem search={search} setSearch={setSearch} />
       <MainContent
         items={items.filter((item) =>
           item.item.toLowerCase().includes(search.toLowerCase())
