@@ -1,9 +1,9 @@
-import Header from "./Header";
+import React, { useState } from "react";
+import Headings from "./Headings";
 import SearchItem from "./SearchItem";
 import AddItem from "./AddItem";
-import Content from "./Content";
+import MainContent from "./MainContent";
 import Footer from "./Footer";
-import { useState } from "react";
 
 function App() {
   const [items, setItems] = useState(
@@ -13,28 +13,28 @@ function App() {
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
 
-  const setAndSaveItems = (newItems) => {
+  const saveItems = (newItems) => {
     setItems(newItems);
     localStorage.setItem("shoppinglist", JSON.stringify(newItems));
   };
 
-  const addItem = (item) => {
+  const addMoreItems = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id, checked: false, item };
     const listItems = [...items, myNewItem];
-    setAndSaveItems(listItems);
+    saveItems(listItems);
   };
 
   const handleCheck = (id) => {
     const listItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
-    setAndSaveItems(listItems);
+    saveItems(listItems);
   };
 
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
-    setAndSaveItems(listItems);
+    saveItems(listItems);
   };
 
   const checkDuplicateItem = (newItem) => {
@@ -49,7 +49,7 @@ function App() {
       return;
     }
     if (!checkDuplicateItem(newItem)) {
-      addItem(newItem);
+      addMoreItems(newItem);
     } else {
       document.getElementById("errorMsg").innerText =
         "That Item Already Exists!";
@@ -63,14 +63,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="Stella's Healthy Drinks List" />
+      <Headings title="Stella's Healthy Drinks List" />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
       <SearchItem search={search} setSearch={setSearch} />
-      <Content
+      <MainContent
         items={items.filter((item) =>
           item.item.toLowerCase().includes(search.toLowerCase())
         )}
