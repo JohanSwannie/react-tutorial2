@@ -37,6 +37,15 @@ function App() {
     saveItems(listItems);
   };
 
+  const displayError = (errorMessage) => {
+    const errMsg = document.getElementById("errorMsg");
+    errMsg.innerText = errorMessage;
+    errMsg.style.display = "block";
+    setTimeout(() => {
+      errMsg.style.display = "none";
+    }, 2750);
+  };
+
   const checkDuplicateItem = (newItem) => {
     const double =
       items.filter((instance) => instance.item === newItem).length > 0;
@@ -45,19 +54,34 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     if (!newItem) {
       return;
     }
+
+    let errorMessage = "";
+    let alphabetRegex = /[a-zA-Z]/gi;
+    let result = alphabetRegex.test(newItem[0]);
+
+    if (!result) {
+      errorMessage = "Item Description must start with an alphabetic character";
+      displayError(errorMessage);
+      setNewItem("");
+      return;
+    } else if (newItem.length < 3) {
+      errorMessage = "Item Description must be at least 3 characters in length";
+      displayError(errorMessage);
+      setNewItem("");
+      return;
+    }
+
     if (!checkDuplicateItem(newItem)) {
       addMoreItems(newItem);
     } else {
-      document.getElementById("errorMsg").innerText =
-        "That Item Already Exists!";
-      document.getElementById("errorMsg").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("errorMsg").style.display = "none";
-      }, 3500);
+      errorMessage = "That Item Already Exists!";
+      displayError(errorMessage);
     }
+
     setNewItem("");
   };
 
