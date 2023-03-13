@@ -60,7 +60,7 @@ function App() {
     }
 
     let errorMessage = "";
-    let alphabetRegex = /[a-zA-Z]/gi;
+    let alphabetRegex = /[a-z]/gi;
     let result = alphabetRegex.test(newItem[0]);
 
     if (!result) {
