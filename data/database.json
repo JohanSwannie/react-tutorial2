@@ -3,12 +3,12 @@
     {
       "id": 1,
       "checked": false,
-      "item": "Lime Juice"
+      "item": "Orange Juice"
     },
     {
       "id": 2,
       "checked": false,
-      "item": "Coconut Water"
+      "item": "Low Fat Milk"
     },
     {
       "id": 3,
@@ -18,7 +18,22 @@
     {
       "id": 4,
       "checked": false,
+      "item": "Mango Juice"
+    },
+    {
+      "id": 5,
+      "checked": false,
       "item": "Redbush Tea"
+    },
+    {
+      "id": 6,
+      "checked": false,
+      "item": "Coconut Water"
+    },
+    {
+      "id": 7,
+      "checked": false,
+      "item": "Papaya Juice"
     }
   ]
 }
