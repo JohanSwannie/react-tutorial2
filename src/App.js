@@ -178,8 +178,8 @@ function App() {
         )}
         {!fetchError && !isLoading && (
           <MainContent
-            items={items.filter((item) =>
-              item.item.toLowerCase().includes(search.toLowerCase())
+            items={items.filter((instance) =>
+              instance.item.toLowerCase().includes(search.toLowerCase())
             )}
             handleCheck={handleCheck}
             handleDelete={handleDelete}
