@@ -146,11 +146,6 @@ ul li::before {
   border-bottom: 1px solid #eee;
 }
 
-.addForm label {
-  position: absolute;
-  left: -99999px;
-}
-
 .addForm input[type='text'] {
   flex-grow: 1;
   max-width: calc(100% - 50px);
