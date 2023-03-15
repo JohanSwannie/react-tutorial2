@@ -11,7 +11,16 @@ const MainContent = ({ items, handleCheck, handleDelete }) => {
           handleDelete={handleDelete}
         />
       ) : (
-        <p style={{ marginTop: "2rem" }}>Your list is empty.</p>
+        <p
+          style={{
+            color: "#FFF",
+            fontSize: "1.85rem",
+            forntWeight: "bold",
+            marginTop: "2rem",
+          }}
+        >
+          Your list is empty.
+        </p>
       )}
     </main>
   );
